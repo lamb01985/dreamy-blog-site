@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    padding: 1em;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+main {
+    margin: 1em auto;
+    width: 80%;
+}
+
+.post {
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    padding: 1em;
+}
+
+.post .title {
+    margin-bottom: 1em;
+    font-size: larger;
+}
+
+.attribution {
+    margin-bottom: 1em;
+    font-size: smaller;
+    color: #999;
+}
+
+#body {
+    max-width: 50em;
+}
+
+textarea#body {
+    width: 50em;
+    height: 15em;
+}
