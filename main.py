@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from pathlib import Path
-from schemas import PostOut
+from schemas import PostOut, PostCreate
 import db
 
 app = FastAPI()
@@ -19,10 +19,12 @@ async def get_post(post_id: int) -> PostOut:
         raise HTTPException(status_code=404, detail="Item not found")
     return post
 
+@app.post("/api/posts") # - Accepts a POST request to "/api/posts"
+async def create_post(post: PostCreate) -> PostOut: # - Expects the fields of a post to be present in the request body
+    post = db.create_post(post)
+    return post
 
 # TODO: Implement a route which:
-# - Accepts a POST request to "/api/posts"
-# - Expects the fields of a post to be present in the request body
 # - Calls the database function which will insert a new post
 # - Returns the new post
 

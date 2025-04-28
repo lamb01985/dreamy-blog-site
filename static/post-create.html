@@ -1,3 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Add New Post</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="post-create.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/posts.html">Home</a></li>
+                <li><a href="/post-create.html">Create New Post</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1>Create New Post</h1>
+            <form id="new_post">
+               <div class="post field">
+                  <label for = "title" >Title:</label>
+                  <input type = "text" name="title" required>
+               </div>
+               <div class="post field">
+                  <label for = "author" >Author:</label>
+                  <input type = "text" name="author" required>
+               </div>
+               <div class="post field">
+                  <label for = "content" >Content:</label>
+                  <textarea type = "text" name="content" required></textarea>
+               </div>
+               <div>
+               <button type="submit" class="button">Create Post</button>
+               </div>
+            </form>
+        </main>
+    </body>
+
+</html>
+
+
+
 <!-- 
 TODO: Create the HTML for the "Create Post" page
 
@@ -9,5 +52,3 @@ TODO: Create the HTML for the "Create Post" page
      - set the id to the field's name, eg "title", "author", or "body"
    - a button to submit the form with
 -->
-
-There's nothing here yet...
