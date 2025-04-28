@@ -15,6 +15,11 @@
                 <li><a href="/post-create.html">Create New Post</a></li>
             </ul>
         </nav>
+        <!-- Background Music -->
+            <audio id="background-music" autoplay loop style="display: none;">
+                <source src="flowy.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         <main>
             <h1>Create New Post</h1>
             <form id="new_post">
@@ -35,6 +40,19 @@
                </div>
             </form>
         </main>
+        <script>
+            const music = document.getElementById('background-music');
+            music.volume = 0.2; // Soft dreamy volume
+            
+            // Start music after first click anywhere on page
+            document.addEventListener('click', () => {
+                if (music.paused) {
+                    music.play().catch(error => {
+                        console.error("Music failed to play:", error);
+                    });
+                }
+            }, { once: true });
+            </script>
     </body>
 
 </html>
