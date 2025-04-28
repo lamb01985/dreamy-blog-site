@@ -9,4 +9,5 @@ class PostOut(BaseModel):
     body: str
     posted_date: date
 
+
 # TODO: Please write a Pydantic model to be used when creating a new post

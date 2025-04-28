@@ -14,26 +14,30 @@ def get_posts() -> list[PostOut]:
     db_posts = db.query(DBPost).order_by(DBPost.posted_date).all()
     posts = []
     for db_post in db_posts:
-        posts.append(PostOut(
-            id=db_post.id,
-            author=db_post.author,
-            title=db_post.title,
-            body=db_post.body,
-            posted_date=db_post.posted_date
-        ))
+        posts.append(
+            PostOut(
+                id=db_post.id,
+                author=db_post.author,
+                title=db_post.title,
+                body=db_post.body,
+                posted_date=db_post.posted_date,
+            )
+        )
     db.close()
     return posts
 
 
-def get_post(post_id: int) -> PostOut:
+def get_post(post_id: int) -> PostOut | None:
     db = SessionLocal()
     db_post = db.query(DBPost).filter(DBPost.id == post_id).first()
+    if db_post is None:
+        return None
     post = PostOut(
         id=db_post.id,
         author=db_post.author,
         title=db_post.title,
         body=db_post.body,
-        posted_date=db_post.posted_date
+        posted_date=db_post.posted_date,
     )
     db.close()
     return post
