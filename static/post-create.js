@@ -1,5 +1,5 @@
-// TODO: get the form button and attach a handler function called
-// "createPost" to the click event
+// TODO: get the form and attach a handler function called
+// "createPost" to the submit event
 
 // TODO: implement the function "createPost"
 // 1) Don't let the from submit in the default way
